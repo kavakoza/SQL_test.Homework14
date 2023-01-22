@@ -9,7 +9,8 @@ app = Flask(__name__)
 def get_by_title(title: str):
     query = f"""
     SELECT * FROM netflix
-    WHERE title = '{title}'     
+    WHERE title = '{title}'
+    ORDER BY release_year DESC     
     """
 
     query_result = get_one(query)
